@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import ProjectCard from '../../components/ProjectCard';
-
 import projectsJSON from '../../data/projects.json';
+
+import { Grid } from "@chakra-ui/react"
+
 
 const Index = () => {
     const [projectsList, setProjectsList] = useState(projectsJSON);
@@ -13,7 +15,10 @@ const Index = () => {
     return (
         <>
             <h1>Projects</h1>
-            {projectCards}
+            <Grid templateColumns="repeat(2, 1fr)" gap="6">
+                {projectCards}
+            </Grid>
+
         </>
     );
 
